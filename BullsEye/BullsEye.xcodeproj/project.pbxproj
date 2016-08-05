@@ -15,6 +15,7 @@
 		225367B61D4B315000BFAC76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225367B41D4B315000BFAC76 /* LaunchScreen.storyboard */; };
 		225367C11D4B315000BFAC76 /* BullsEyeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225367C01D4B315000BFAC76 /* BullsEyeTests.m */; };
 		225367CC1D4B315000BFAC76 /* BullsEyeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225367CB1D4B315000BFAC76 /* BullsEyeUITests.m */; };
+		22AB86691D54B02000A8F32E /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 22AB86681D54B02000A8F32E /* BullsEye.html */; };
 		22F8D2171D4DCFDC00F74840 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F8D2161D4DCFDC00F74840 /* AboutViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		225367C71D4B315000BFAC76 /* BullsEyeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullsEyeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		225367CB1D4B315000BFAC76 /* BullsEyeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BullsEyeUITests.m; sourceTree = "<group>"; };
 		225367CD1D4B315000BFAC76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22AB86681D54B02000A8F32E /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
 		22F8D2151D4DCFDC00F74840 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		22F8D2161D4DCFDC00F74840 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 		225367A51D4B315000BFAC76 /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				22AB86681D54B02000A8F32E /* BullsEye.html */,
 				225367A91D4B315000BFAC76 /* AppDelegate.h */,
 				225367AA1D4B315000BFAC76 /* AppDelegate.m */,
 				225367AC1D4B315000BFAC76 /* ViewController.h */,
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				225367B61D4B315000BFAC76 /* LaunchScreen.storyboard in Resources */,
+				22AB86691D54B02000A8F32E /* BullsEye.html in Resources */,
 				225367B31D4B315000BFAC76 /* Assets.xcassets in Resources */,
 				225367B11D4B315000BFAC76 /* Main.storyboard in Resources */,
 			);

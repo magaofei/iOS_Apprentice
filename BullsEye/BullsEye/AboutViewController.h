@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AboutViewController : UIViewController
-
+@property (nonatomic,weak) IBOutlet UIWebView *webView;
 - (IBAction)close;
 
 @end

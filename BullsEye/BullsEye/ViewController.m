@@ -25,6 +25,32 @@
     [self startNewGame];  
     
     [self updateLabels];
+    
+    //   以下为更高级的控制图片的代码，更改slider的属性
+    UIImage *thumbImageNormal = [UIImage imageNamed:@"SliderThumb-Normal"];
+    [self.slider setThumbImage:thumbImageNormal forState:UIControlStateNormal];   //更改slider的中间的点
+    
+    UIImage *thumbImageHighlighted = [UIImage imageNamed:@"SliderThumb-Highlighted"];
+    [self.slider setThumbImage:thumbImageHighlighted forState:UIControlStateHighlighted];  //同样的，也是更改slider中间的点，目的是替换图像，这个为党用户点击中了圆点时替换。作用是更改透明度 setThumbImage 里的 forState属性不同，一个是Normal 一个是Highlighted  一个是正常状态下，一个是当用户点击时。
+
+    UIImage *trackLeftImage = [[UIImage imageNamed:@"SliderTrackLeft"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 14, 0, 14)];
+      //更改状态条的显示    实际上是以两个图像的显示代替的，  左边一个，邮编一个
+    [self.slider setMinimumTrackImage:trackLeftImage forState:UIControlStateNormal];
+
+    UIImage *trackRightImage =[[UIImage imageNamed:@"SliderTrackRight"]resizableImageWithCapInsets:UIEdgeInsetsMake(0, 14, 0, 14)];
+    
+    [self.slider setMaximumTrackImage:trackRightImage forState:UIControlStateNormal];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 - (void)startNewRound{
@@ -104,5 +130,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 @end
