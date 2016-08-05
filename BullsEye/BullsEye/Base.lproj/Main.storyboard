@@ -18,14 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="VrJ-bM-2Qd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="VrJ-bM-2Qd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gc0-gz-Hdr">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="539"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWa-hn-Pax">
                                 <rect key="frame" x="250" y="563" width="100" height="37"/>
                                 <constraints>
@@ -39,18 +35,22 @@
                                     <action selector="close" destination="WBX-3u-W5p" eventType="touchUpInside" id="WgV-5I-q4Q"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc0-gz-Hdr">
+                                <rect key="frame" x="40" y="20" width="520" height="535"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JWa-hn-Pax" firstAttribute="top" secondItem="gc0-gz-Hdr" secondAttribute="bottom" constant="8" id="8ag-iR-Gm9"/>
+                            <constraint firstItem="ui9-fg-iYx" firstAttribute="top" secondItem="VrJ-bM-2Qd" secondAttribute="bottom" id="FwH-4r-GTs"/>
                             <constraint firstItem="ui9-fg-iYx" firstAttribute="top" secondItem="JWa-hn-Pax" secondAttribute="bottom" id="NJ1-BQ-UfP"/>
-                            <constraint firstItem="JWa-hn-Pax" firstAttribute="top" secondItem="VrJ-bM-2Qd" secondAttribute="bottom" id="Q9S-tC-2Ro"/>
-                            <constraint firstItem="gc0-gz-Hdr" firstAttribute="leading" secondItem="tHv-p9-iAQ" secondAttribute="leadingMargin" id="Qbw-Ie-8gZ"/>
+                            <constraint firstItem="gc0-gz-Hdr" firstAttribute="leading" secondItem="tHv-p9-iAQ" secondAttribute="leadingMargin" constant="20" id="Qbw-Ie-8gZ"/>
                             <constraint firstAttribute="trailing" secondItem="VrJ-bM-2Qd" secondAttribute="trailing" id="Yfi-PX-ErS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gc0-gz-Hdr" secondAttribute="trailing" id="dF7-Z4-ml0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gc0-gz-Hdr" secondAttribute="trailing" constant="20" id="dF7-Z4-ml0"/>
                             <constraint firstItem="VrJ-bM-2Qd" firstAttribute="leading" secondItem="tHv-p9-iAQ" secondAttribute="leading" id="fxo-wN-i7g"/>
                             <constraint firstItem="VrJ-bM-2Qd" firstAttribute="top" secondItem="2Mp-Bn-enM" secondAttribute="bottom" id="gss-rL-l8I"/>
-                            <constraint firstItem="gc0-gz-Hdr" firstAttribute="top" secondItem="2Mp-Bn-enM" secondAttribute="bottom" id="thB-Z8-ZGX"/>
+                            <constraint firstItem="gc0-gz-Hdr" firstAttribute="top" secondItem="2Mp-Bn-enM" secondAttribute="bottom" constant="20" id="thB-Z8-ZGX"/>
                             <constraint firstItem="JWa-hn-Pax" firstAttribute="centerX" secondItem="tHv-p9-iAQ" secondAttribute="centerX" id="uz1-RM-5if"/>
                         </constraints>
                     </view>

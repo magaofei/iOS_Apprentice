@@ -99,8 +99,22 @@
 }
 
 - (IBAction)startOver{    //点击OVER按钮时 清零
+  
+       //当按钮被按下时，增加渐进动画效果
+    CATransition *transition = [CATransition animation];
+    transition.type = kCATransitionFade;
+    transition.duration = 1;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    //
     [self startNewGame];
     [self updateLabels];
+    //
+    [self.view.layer addAnimation:transition forKey:nil];
+    
+    
+    
+    
+    
 }
 
 - (void)updateLabels{
