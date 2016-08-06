@@ -8,7 +8,7 @@
         <!--Add Item-->
         <scene sceneID="drO-1k-kvy">
             <objects>
-                <tableViewController id="Hvg-uH-BWl" sceneMemberID="viewController">
+                <tableViewController id="Hvg-uH-BWl" customClass="AddItemViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7vg-as-yut">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,8 +29,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Item" id="Dr7-fi-92M">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="X4g-Nb-l0G"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="qBR-ci-bQm"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="X4g-Nb-l0G">
+                            <connections>
+                                <action selector="cancel" destination="Hvg-uH-BWl" id="uVr-ze-BfY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="qBR-ci-bQm">
+                            <connections>
+                                <action selector="done" destination="Hvg-uH-BWl" id="vLU-6v-1he"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wg5-8H-sKz" userLabel="First Responder" sceneMemberID="firstResponder"/>

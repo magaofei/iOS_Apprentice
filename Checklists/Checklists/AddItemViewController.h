@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddItemViewController : UITableView
+@interface AddItemViewController : UITableViewController
+
+- (IBAction) cancel;
+- (IBAction) done;
 
 @end
