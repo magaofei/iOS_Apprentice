@@ -14,12 +14,37 @@
 }
 
 - (IBAction)done{
-    
+    NSLog(@"Contend text is %@",self.textField.text);
     [self.presentingViewController
      dismissViewControllerAnimated:YES completion:nil];
     
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView   //当选中这一行的时候，什么也不做
+  willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    return nil;
+}
 
+- (void) viewWillAppear:(BOOL)animated{   //添加？
+    [super viewWillAppear:animated];  //决定是否让父类视图显示
+    [self.textField becomeFirstResponder];
+}
+
+/**
+ *  textField格式的函数，用来判断，当用户输入时更改doneBarButton.enabled的值 ，目的的是为了在前端进行控制，防止输入空值就点击Done
+ *
+ *  @param theTextField 选择textField
+ *  @param range        <#range description#>
+ *  @param string       <#string description#>
+ *
+ *  @return <#return value description#>
+ */
+- (BOOL)textField:(UITextField *)theTextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+      //创建一个新的Text
+    NSString *newText = [theTextField.text    stringByReplacingCharactersInRange:range withString:string];
+    
+    self.doneBarButton.enabled = ([newText length] > 0);   //大于0 时
+    return YES;
+}
 
 @end

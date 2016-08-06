@@ -9,20 +9,35 @@
         <scene sceneID="drO-1k-kvy">
             <objects>
                 <tableViewController id="Hvg-uH-BWl" customClass="AddItemViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7vg-as-yut">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="7vg-as-yut">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RQw-u1-Jf7">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RQw-u1-Jf7" id="KtZ-hi-2or">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="hlm-nu-2qU">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="RQw-u1-Jf7">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RQw-u1-Jf7" id="KtZ-hi-2or">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Bj-mp-R4t">
+                                                    <rect key="frame" x="8" y="5" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="Hvg-uH-BWl" eventType="editingDidEndOnExit" id="Jm1-z3-N1w"/>
+                                                        <outlet property="delegate" destination="Hvg-uH-BWl" id="9To-w3-zDR"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="Hvg-uH-BWl" id="14r-DD-7Dt"/>
                             <outlet property="delegate" destination="Hvg-uH-BWl" id="8NM-MO-zQp"/>
@@ -34,12 +49,16 @@
                                 <action selector="cancel" destination="Hvg-uH-BWl" id="uVr-ze-BfY"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="qBR-ci-bQm">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="qBR-ci-bQm">
                             <connections>
-                                <action selector="done" destination="Hvg-uH-BWl" id="vLU-6v-1he"/>
+                                <action selector="done" destination="Hvg-uH-BWl" id="IFM-Ke-SZs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneBarButton" destination="qBR-ci-bQm" id="Lw8-xQ-3Pc"/>
+                        <outlet property="textField" destination="RQw-u1-Jf7" id="PUg-EF-Dyn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wg5-8H-sKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,6 +98,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="l6L-w4-hMx">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cIr-nL-5I1">
                             <connections>
+                                <action selector="addItem" destination="M9M-Jd-bir" id="G58-ap-hQn"/>
                                 <segue destination="2uJ-Tm-PG9" kind="show" id="yk2-3k-fE7"/>
                             </connections>
                         </barButtonItem>
