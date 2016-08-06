@@ -13,6 +13,7 @@
 		227C83C71D506B36009F41E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227C83C51D506B36009F41E8 /* Main.storyboard */; };
 		227C83C91D506B36009F41E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227C83C81D506B36009F41E8 /* Assets.xcassets */; };
 		227C83CC1D506B36009F41E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227C83CA1D506B36009F41E8 /* LaunchScreen.storyboard */; };
+		22AB866C1D55713F00A8F32E /* ChecklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AB866B1D55713F00A8F32E /* ChecklistItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		227C83C81D506B36009F41E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		227C83CB1D506B36009F41E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		227C83CD1D506B36009F41E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22AB866A1D55713F00A8F32E /* ChecklistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChecklistItem.h; sourceTree = "<group>"; };
+		22AB866B1D55713F00A8F32E /* ChecklistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				227C83CA1D506B36009F41E8 /* LaunchScreen.storyboard */,
 				227C83CD1D506B36009F41E8 /* Info.plist */,
 				227C83BC1D506B36009F41E8 /* Supporting Files */,
+				22AB866A1D55713F00A8F32E /* ChecklistItem.h */,
+				22AB866B1D55713F00A8F32E /* ChecklistItem.m */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				227C83C41D506B36009F41E8 /* ViewController.m in Sources */,
 				227C83C11D506B36009F41E8 /* AppDelegate.m in Sources */,
 				227C83BE1D506B36009F41E8 /* main.m in Sources */,
+				22AB866C1D55713F00A8F32E /* ChecklistItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
