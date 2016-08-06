@@ -154,6 +154,35 @@
        
     [tableView deselectRowAtIndexPath:indexPath animated:YES]; }
 
+/**
+ *  删除行功能
+ *
+ *  @param tableView    选择哪个tableView
+ *  @param editingStyle 修改样式
+ *  @param indexPath    行数索引
+ */
+- (void)tableView:(UITableView *)tableView
+
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+
+forRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    
+    [_items removeObjectAtIndex:indexPath.row];  //不仅仅是告诉ChecklistItem的索引号，并且永久的删除了
+    
+    NSArray *indexPaths = @[indexPath];
+    
+    [tableView deleteRowsAtIndexPaths:indexPaths   //调用删除
+    withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+}
+
+
+
+
+
+
 -(IBAction) addItem {    //点击按钮后做的事情
     NSInteger newRowIndex = [_items count];//NSMutbaleArray的长度  , 也就是 ChecklistItem的总个数  此时， 这个数的位置就是最新一个的空行，因为是从0开始的，所以下一个空行就等于总长度
     ChecklistItem *item = [[ChecklistItem alloc] init]; //初始化
