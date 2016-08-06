@@ -10,6 +10,6 @@
 
 @interface ViewController : UITableViewController
 
-
+- (IBAction)addItem;
 @end
 

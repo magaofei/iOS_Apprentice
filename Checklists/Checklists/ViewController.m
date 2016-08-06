@@ -154,10 +154,19 @@
        
     [tableView deselectRowAtIndexPath:indexPath animated:YES]; }
 
-
-
-
-
+-(IBAction) addItem {    //点击按钮后做的事情
+    NSInteger newRowIndex = [_items count];//NSMutbaleArray的长度  , 也就是 ChecklistItem的总个数  此时， 这个数的位置就是最新一个的空行，因为是从0开始的，所以下一个空行就等于总长度
+    ChecklistItem *item = [[ChecklistItem alloc] init]; //初始化
+    item.text = @"I am a new row";
+    item.checked = NO;
+    [_items addObject:item];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0] ;  //把ChecklistItem的总个数赋值给 indexPathForRow 默认选择0
+    
+    NSArray *indexPaths = @[indexPath];//赋值为数组
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];  //调用  插入一个新行， 位置==现在的总长度， 格式自动
+    
+}
 
 
 @end
