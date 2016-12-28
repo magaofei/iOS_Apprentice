@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ChecklistItem : NSObject
+@interface ChecklistItem : NSObject 
 
 @property (nonatomic,copy) NSString *text;
 @property (nonatomic,assign) BOOL checked;    //  分别代表ChecklistItem的文本和点击状态

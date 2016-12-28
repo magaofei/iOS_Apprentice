@@ -11,22 +11,25 @@
 @class AddItemViewController;
 @class ChecklistItem;
 
-@protocol AddItemViewControllerDelegate <NSObject>
+
+@protocol AddItemViewControllerDelegate <NSObject>  //协议
+
 - (void)addItemViewControllerDidCancel:(AddItemViewController *)controller;
 
-- (void)addItemViewController:(AddItemViewController *)controller didFinishAddingItem:(ChecklistItem *)item;
+- (void)addItemViewController:(AddItemViewController *)controller didFinishAddingItem:(ChecklistItem *)item; //当done按下后 
+
 @end
 
 @interface AddItemViewController : UITableViewController
-                        <UITextFieldDelegate>
-@property (nonatomic,weak) id <AddItemViewControllerDelegate> delegate;
+<UITextFieldDelegate>
 
-- (void) AddItemViewControllerDidCancel:(AddItemViewController *) controller;
-@property (weak, nonatomic) IBOutlet UITableViewCell *textField;  //用来保存输入的字符
-
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
-//@property (weak,nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
-- (IBAction) cancel;
-- (IBAction) done;
+
+@property (nonatomic, weak) id <AddItemViewControllerDelegate> delegate;
+
+- (IBAction)cancel;
+- (IBAction)done;
 
 @end
+

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AddItemViewController.h"
 @interface ViewController : UITableViewController
+            <AddItemViewControllerDelegate>  //遵守了协议
 
-- (IBAction)addItem;
+//- (IBAction)addItem;
 @end
 

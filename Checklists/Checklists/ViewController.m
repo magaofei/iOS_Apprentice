@@ -19,6 +19,30 @@
     NSMutableArray *_items;   //存储一个NSMutableArray
 }
 
+- (void) addItemViewControllerDidCancel:(AddItemViewController *)controller{
+    [self dismissViewControllerAnimated:YES completion:nil];   //点击取消按钮后, 画面消失
+}
+
+- (void) addItemViewController:   //done按钮按下后
+(AddItemViewController *)controller didFinishAddingItem:(ChecklistItem *)item{
+   
+    NSInteger newRowIndex = [_items count]; //让现在的总数等于最新一个的行位置
+    [_items addObject:item];  //添加一个新的item 到 NSMutableArray里
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];   //第几行?
+    NSArray *indexPaths = @[indexPath];
+    
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];  //插入
+    
+    [self dismissViewControllerAnimated:YES completion:nil]; //让画面消失
+    
+    
+    
+}
+
+
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -66,13 +90,7 @@
     
     [_items addObject:item];
     
-    item = [[ChecklistItem alloc] init];   //自动申请注册为ChecklistItem
     
-    item.text = @"Eat ice cream";
-    
-    item.checked = YES;
-    
-    [_items addObject:item];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -183,19 +201,34 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 
 
--(IBAction) addItem {    //点击按钮后做的事情
-    NSInteger newRowIndex = [_items count];//NSMutbaleArray的长度  , 也就是 ChecklistItem的总个数  此时， 这个数的位置就是最新一个的空行，因为是从0开始的，所以下一个空行就等于总长度
-    ChecklistItem *item = [[ChecklistItem alloc] init]; //初始化
-    item.text = @"I am a new row";
-    item.checked = NO;
-    [_items addObject:item];
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0] ;  //把ChecklistItem的总个数赋值给 indexPathForRow 默认选择0
-    
-    NSArray *indexPaths = @[indexPath];//赋值为数组
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];  //调用  插入一个新行， 位置==现在的总长度， 格式自动
-    
+//-(IBAction) addItem {    //点击按钮后做的事情
+//    NSInteger newRowIndex = [_items count];//NSMutbaleArray的长度  , 也就是 ChecklistItem的总个数  此时， 这个数的位置就是最新一个的空行，因为是从0开始的，所以下一个空行就等于总长度
+//    ChecklistItem *item = [[ChecklistItem alloc] init]; //初始化
+//    item.text = @"I am a new row";
+//    item.checked = NO;
+//    [_items addObject:item];
+//    
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0] ;  //把ChecklistItem的总个数赋值给 indexPathForRow 默认选择0
+//    
+//    NSArray *indexPaths = @[indexPath];//赋值为数组
+//    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];  //调用  插入一个新行， 位置==现在的总长度， 格式自动
+//    
+//}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"AddItem"]) {  //如果转场是AddItem
+        //1
+        UINavigationController *navigationController = segue.destinationViewController;
+        
+        //2
+        AddItemViewController *controller = (AddItemViewController *)navigationController.topViewController;
+        
+        //3
+        controller.delegate = self;
+        
+    }
 }
+
 
 
 @end

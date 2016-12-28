@@ -7,17 +7,24 @@
 //
 
 #import "AddItemViewController.h"
+#import "ChecklistItem.h"
 #pragma mark - Table view data source
 @implementation AddItemViewController
+
+
 - (IBAction) cancel{
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];   //self后用点语法    这两个都是用来让视图消失的
+//    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];   //self后用点语法    这两个都是用来让视图消失的
+    
+    [self.delegate addItemViewControllerDidCancel:self];//调用自己
 }
 
-- (IBAction)done{
-    NSLog(@"Contend text is %@",self.textField.text);
-    [self.presentingViewController
-     dismissViewControllerAnimated:YES completion:nil];
+- (IBAction)done
+{
+    ChecklistItem *item = [[ChecklistItem alloc] init];
+    item.text = self.textField.text;
+    item.checked = NO;
     
+    [self.delegate addItemViewController:self didFinishAddingItem:item];
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView   //当选中这一行的时候，什么也不做
@@ -41,10 +48,13 @@
  */
 - (BOOL)textField:(UITextField *)theTextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
       //创建一个新的Text
-    NSString *newText = [theTextField.text    stringByReplacingCharactersInRange:range withString:string];
+    NSString *newText = [theTextField.text stringByReplacingCharactersInRange:range withString:string];
     
     self.doneBarButton.enabled = ([newText length] > 0);   //大于0 时
     return YES;
 }
+
+
+
 
 @end
