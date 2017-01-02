@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>TFHppleWithAFNetworking2x.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>222C96B21E1946FA00A75879</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>224409211E015509004CAA2A</key>
 		<dict>
 			<key>primary</key>
