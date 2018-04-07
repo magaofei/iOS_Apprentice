@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworkingWithDataTask.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>NSURLSessionBackgroundData.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>222C96B21E1946FA00A75879</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>222C98331E1A514700A75879</key>
 		<dict>
 			<key>primary</key>
 			<true/>
